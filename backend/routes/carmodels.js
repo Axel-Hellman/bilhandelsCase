@@ -32,4 +32,14 @@ router.route("/:id").get((req, res) => {
     .catch(err => res.status(400).json("Error: " + err));
 });
 
+router.route("/:id").delete((req, res) => {
+  Carmodel.findById(req.params.id)
+    .then(carmodels => res.json(carmodels))
+    .catch(err => res.status(400).json("Error: " + err));
+
+  Carmodel.findByIdAndDelete(req.params.id).catch(err =>
+    res.status(400).json("Error: " + err)
+  );
+});
+
 module.exports = router;

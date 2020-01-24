@@ -7,4 +7,19 @@ router.route("/").get((req, res) => {
     .catch(err => res.status(400).json("Error: " + err)); //felmeddelande om något går snätt
 });
 
+router.route("/add").post((req, res) => {
+  const id = Number(req.body.id);
+  const name = req.body.name;
+
+  const newEmployee = new Employee({
+    id,
+    name
+  });
+
+  newEmployee
+    .save()
+    .then(() => res.json(newEmployee))
+    .catch(err => res.status(400).json("Error: " + err));
+});
+
 module.exports = router;

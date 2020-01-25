@@ -7,6 +7,7 @@ import "./App.css";
 //importerar alla components
 import Navbar from "./components/navbar.component";
 import Cars from "./components/cars.component";
+import Employees from "./components/employees.component";
 
 //visar alla components på hemsidan
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Navbar />
           <br />
           <Route path="/cars" exact component={Cars} />
+          <Route path="/employees" exact component={Employees} />
         </div>
       </Router>
     </div>

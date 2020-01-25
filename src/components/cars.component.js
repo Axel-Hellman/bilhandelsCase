@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Axios from "axios";
 
 export default class Cars extends Component {
   constructor(props) {
@@ -11,10 +12,10 @@ export default class Cars extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      //"id": null,
+      id: 5,
       brand: "",
       model: "",
-      price: undefined
+      price: ""
     };
   }
 
@@ -40,12 +41,17 @@ export default class Cars extends Component {
     e.preventDefault();
 
     const carModel = {
+      id: this.state.id,
       brand: this.state.brand,
       model: this.state.model,
       price: this.state.price
     };
 
     console.log(carModel);
+
+    Axios.post("http://localhost:5000/carmodels/add", carModel).then(res =>
+      console.log(res.data)
+    );
 
     window.location = "/cars"; //Laddar om sidan efter submit
   }
@@ -78,7 +84,7 @@ export default class Cars extends Component {
             </div>
             <div className="form-group">
               <input
-                type="text"
+                type="number"
                 required
                 className="form-control"
                 placeholder="Enter price"

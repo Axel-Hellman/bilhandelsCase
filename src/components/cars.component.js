@@ -14,7 +14,7 @@ export default class Cars extends Component {
       //"id": null,
       brand: "",
       model: "",
-      price: 0
+      price: undefined
     };
   }
 
@@ -47,28 +47,69 @@ export default class Cars extends Component {
 
     console.log(carModel);
 
-    window.location = "/cars"; // tar dig tilbaka till startsidan efter sumit
+    window.location = "/cars"; //Laddar om sidan efter submit
   }
 
   render() {
     return (
-      <div>
-        <h4>Add new carmodel</h4>
-        <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label>Name of brand: </label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              value={this.state.brand}
-              onChange={this.onChangeBrand}
-            />
-          </div>
-          <div className="form-group">
-            <input type="submit" value="Submit" className="btn btn-primary" />
-          </div>
-        </form>
+      <div className="row">
+        <div className="col-sm-6">
+          <h4>Add new carmodel</h4>
+          <form onSubmit={this.onSubmit}>
+            <div className="form-group">
+              <input
+                type="text"
+                required
+                className="form-control"
+                placeholder="Enter brand"
+                value={this.state.brand}
+                onChange={this.onChangeBrand}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                required
+                className="form-control"
+                placeholder="Enter Model"
+                value={this.state.model}
+                onChange={this.onChangeModel}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                required
+                className="form-control"
+                placeholder="Enter price"
+                value={this.state.price}
+                onChange={this.onChangePrice}
+              />
+            </div>
+            <div className="form-group">
+              <input type="submit" value="Submit" className="btn btn-primary" />
+            </div>
+          </form>
+        </div>
+
+        <div className="col-sm-6">
+          <h4>Delete a model</h4>
+          <form onSubmit={this.onSubmit}>
+            <div className="form-group">
+              <input
+                type="text"
+                required
+                className="form-control"
+                placeholder="Enter an _id"
+                value={this.state.brand}
+                onChange={this.onChangeBrand}
+              />
+            </div>
+            <div className="form-group">
+              <input type="submit" value="Submit" className="btn btn-primary" />
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

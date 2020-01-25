@@ -7,6 +7,7 @@ router.route("/").get((req, res) => {
     .catch(err => res.status(400).json("Error: " + err)); //felmeddelande om något går snätt
 });
 
+//lägger till nya employees i databasen genom inmatning av data
 router.route("/add").post((req, res) => {
   const id = Number(req.body.id);
   const name = req.body.name;

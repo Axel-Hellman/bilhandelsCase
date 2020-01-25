@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-//skapar parametrarna för carmodels
+//skapar parametrarna för carmodels-tabellen
 const carmodelSchema = new Schema({
   id: { type: Number, required: true, unique: true },
   brand: { type: String, required: true },

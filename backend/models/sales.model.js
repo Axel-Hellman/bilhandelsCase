@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-//skapar parametrarna för sales
+//skapar parametrarna för sales-tabellen
 const userSchema = new Schema({
   id: { type: Number, required: true, unique: true },
   employee_id: { type: Number, required: true },

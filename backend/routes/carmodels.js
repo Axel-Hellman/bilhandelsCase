@@ -28,13 +28,6 @@ router.route("/add").post((req, res) => {
     .catch(err => res.status(400).json("Error: " + err));
 });
 
-//Hittar en bilmodell med hjälp av mongoDBs automatiskt genererade, unika, "_id" och returnerar den
-router.route("/:id").get((req, res) => {
-  Carmodel.findById(req.params.id)
-    .then(carmodels => res.json(carmodels))
-    .catch(err => res.status(400).json("Error: " + err));
-});
-
 //Hittar först en bilmodell med hjälp av mongoDBs automatiskt genererade, unika, "_id" och returnerar den
 //Raderar sedan samma bilmodell
 router.route("/:id").delete((req, res) => {

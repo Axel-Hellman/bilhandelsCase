@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000; //sätter porten till 5000 (3000 skulle ha stört REACTs port)
 
 app.use(cors());
 app.use(express.json());
@@ -14,6 +14,7 @@ const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
 const connection = mongoose.connection;
 connection.once("open", () => {
+  //efter vi skapat en connection får vi nedanstående sträng som bekreftelse
   console.log("MongoDB database connection established successfully");
 });
 

@@ -17,6 +17,4 @@ router.route("/add").post((req, res) => {
     .catch(err => res.status(400).json("Error: " + err));
 });
 
-//lägger till nya Admins i databasen genom inmatning av data
-
 module.exports = router;

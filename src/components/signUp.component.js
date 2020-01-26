@@ -60,7 +60,6 @@ export default class signUp extends Component {
                   onChange={this.onChangeUsername}
                 />
               </div>
-
               <div className="form-group">
                 <input
                   type="text"
@@ -71,7 +70,6 @@ export default class signUp extends Component {
                   onChange={this.onChangePassword}
                 />
               </div>
-
               <div className="form-group">
                 <input
                   type="submit"

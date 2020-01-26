@@ -45,10 +45,10 @@ export default class signUp extends Component {
 
   render() {
     return (
-      <div className="p-5 mb-2 bg-info text-white ">
+      <div className="p-5 mb-2 bg-info text-white col-sm-8 mx-auto rounded">
         <div className="p-5 text-center">
-          <div>
-            <h4>Create account</h4>
+          <h4>Create account</h4>
+          <div className="pr-4 pl-4">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
                 <input
@@ -71,11 +71,7 @@ export default class signUp extends Component {
                 />
               </div>
               <div className="form-group">
-                <input
-                  type="submit"
-                  value="Submit"
-                  className="btn btn-primary"
-                />
+                <input type="submit" value="Submit" className="btn btn-dark" />
               </div>
             </form>
           </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 
+//skapar en funktional-react-component för att ta emot props och returnera jsx-kod
 const Car = props => (
   <tr>
     <td>{props.car.id}</td>
@@ -40,6 +41,7 @@ export default class Cars extends Component {
     };
   }
 
+  //kallas direkt efter komponenten blivigt mountad: får listan av carmodels från databasen
   componentDidMount() {
     Axios.get("http://localhost:5000/carmodels/")
       .then(Response => {
@@ -50,6 +52,7 @@ export default class Cars extends Component {
       });
   }
 
+  //itererar igenom listan cars, och returnerar (med hjälp av komponenten "Car") alla bilars parametrar
   carList() {
     return this.state.cars.map(currentCar => {
       return (
@@ -89,6 +92,7 @@ export default class Cars extends Component {
     });
   }
 
+  //berättar vad som skall hända när submit-knappen trycks
   onSubmit(e) {
     e.preventDefault();
 

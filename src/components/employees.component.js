@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 
+//skapar en funktional-react-component för att ta emot props och returnera jsx-kod
 const Employee = props => (
   <tr>
     <td>{props.employee.name}</td>
@@ -17,6 +18,7 @@ export default class Employees extends Component {
     };
   }
 
+  //kallas direkt efter komponenten blivigt mountad: får listan av employees från databasen
   componentDidMount() {
     Axios.get("http://localhost:5000/employees/")
       .then(Response => {
@@ -27,6 +29,7 @@ export default class Employees extends Component {
       });
   }
 
+  //itererar igenom listan employees, och returnerar (med hjälp av komponenten "Employee") employees parameter
   employeeList() {
     return this.state.employees.map(currentemployee => {
       return <Employee employee={currentemployee} />;

@@ -22,11 +22,13 @@ connection.once("open", () => {
 const carmodelsRouter = require("./routes/carmodels");
 const employeesRouter = require("./routes/employees");
 const salesRouter = require("./routes/sales");
+const usersRouter = require("./routes/users");
 
 //sätter med vilken url-text routerna ska anropas
 app.use("/carmodels", carmodelsRouter);
 app.use("/employees", employeesRouter);
 app.use("/sales", salesRouter);
+app.use("/users", usersRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

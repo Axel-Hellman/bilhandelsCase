@@ -35,19 +35,17 @@ export default class Employees extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <h4 className="text-white">Employees</h4>
-          <table className="table table-dark">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Total sales</th>
-              </tr>
-            </thead>
-            <tbody>{this.employeeList()}</tbody>
-          </table>
-        </div>
+      <div className="pt-4 pb-3 container">
+        <h4 className="text-white">Employees</h4>
+        <table className="table table-dark">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Total sales</th>
+            </tr>
+          </thead>
+          <tbody>{this.employeeList()}</tbody>
+        </table>
       </div>
     );
   }

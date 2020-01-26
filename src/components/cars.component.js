@@ -105,12 +105,12 @@ export default class Cars extends Component {
       console.log(res.data)
     );
 
-    window.location = "/cars"; //Laddar om sidan efter submit
+    window.location = "/"; //Laddar om sidan efter submit
   }
 
   render() {
     return (
-      <div>
+      <div className="pt-4 pb-3 container">
         <div>
           <h4>Available car models</h4>
           <table className="table">

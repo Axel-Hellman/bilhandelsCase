@@ -5,6 +5,7 @@ import "./App.css";
 
 //importerar alla components
 import Navbar from "./components/navbar.component";
+import Welcome from "./components/welcome.component";
 import Cars from "./components/cars.component";
 import Employees from "./components/employees.component";
 
@@ -13,11 +14,13 @@ function App() {
   return (
     <div className="containter">
       <Router>
-        <div className="container">
+        <div>
           <Navbar />
-          <br />
-          <Route path="/cars" exact component={Cars} />
-          <Route path="/employees" exact component={Employees} />
+          <Route component={Welcome} />
+        </div>
+        <div className="container">
+          <Route component={Cars} />
+          <Route component={Employees} />
         </div>
       </Router>
     </div>

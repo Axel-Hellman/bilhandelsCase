@@ -28,6 +28,7 @@ export default class signUp extends Component {
     });
   }
 
+  //berättar vad som skall hända när submit-knappen trycks
   onSubmit(e) {
     e.preventDefault();
 
@@ -40,7 +41,7 @@ export default class signUp extends Component {
       console.log(res.data)
     );
 
-    window.location = "/"; //Laddar wellcome-sidan efter submit
+    window.location = "/"; //Laddar welcome-sidan efter submit
   }
 
   render() {

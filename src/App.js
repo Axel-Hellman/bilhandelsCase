@@ -18,9 +18,13 @@ function App() {
           <Navbar />
           <Route component={Welcome} />
         </div>
-        <div className="container">
+        <div className="container pt-3 pb-3">
           <Route component={Cars} />
-          <Route component={Employees} />
+        </div>
+        <div className="bg-dark pt-4 pb-3">
+          <div className="container">
+            <Route component={Employees} />
+          </div>
         </div>
       </Router>
     </div>
